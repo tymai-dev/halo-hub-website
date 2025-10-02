@@ -427,6 +427,25 @@ img {
   box-shadow: 0 0 0 3px rgba(91, 61, 245, 0.18);
 }
 
+.turnstile-container {
+  margin-top: 0.75rem;
+}
+
+.form-feedback {
+  min-height: 1.2rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-feedback--success {
+  color: #1f8a4d;
+}
+
+.form-feedback--error {
+  color: #d23f52;
+}
+
 .site-footer {
   background: #120a24;
   color: rgba(255, 255, 255, 0.86);

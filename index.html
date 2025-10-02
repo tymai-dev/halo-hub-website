@@ -11,8 +11,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
-  <body>
+  <body
+    data-worker-endpoint="https://your-worker-subdomain.workers.dev/submissions"
+    data-turnstile-sitekey="0x0000000000000000000000000000000AA"
+  >
     <header class="site-header">
       <div class="container nav">
         <a class="logo" href="#top" aria-label="HaloHub home">
@@ -180,7 +188,7 @@
             </p>
           </div>
           <div class="pilot-forms">
-            <form class="pilot-form" aria-labelledby="family-title">
+            <form class="pilot-form" aria-labelledby="family-title" data-form-type="family">
               <h3 id="family-title">Families &amp; Caregivers</h3>
               <p>Request early access to resource libraries in your community.</p>
               <label for="family-name">Name</label>
@@ -195,10 +203,13 @@
               <label for="family-interest">What resources spark your child’s curiosity?</label>
               <textarea id="family-interest" name="family-interest" rows="3"></textarea>
 
+              <div class="turnstile-container" data-turnstile></div>
+
               <button type="submit" class="btn primary full">Apply as a family</button>
+              <p class="form-feedback" role="status" aria-live="polite"></p>
             </form>
 
-            <form class="pilot-form" aria-labelledby="donor-title">
+            <form class="pilot-form" aria-labelledby="donor-title" data-form-type="donor">
               <h3 id="donor-title">Donors &amp; Funders</h3>
               <p>Champion regenerative resource hubs for kids in your city.</p>
               <label for="donor-name">Name / Organization</label>
@@ -213,10 +224,13 @@
               <label for="donor-message">How would you like to contribute?</label>
               <textarea id="donor-message" name="donor-message" rows="3"></textarea>
 
+              <div class="turnstile-container" data-turnstile></div>
+
               <button type="submit" class="btn primary full">Partner as a donor</button>
+              <p class="form-feedback" role="status" aria-live="polite"></p>
             </form>
 
-            <form class="pilot-form" aria-labelledby="collab-title">
+            <form class="pilot-form" aria-labelledby="collab-title" data-form-type="collaborator">
               <h3 id="collab-title">Collaborators &amp; Builders</h3>
               <p>Let’s design programming, tech, and experiences together.</p>
               <label for="collab-name">Name / Organization</label>
@@ -231,7 +245,10 @@
               <label for="collab-idea">What would you like to build?</label>
               <textarea id="collab-idea" name="collab-idea" rows="3"></textarea>
 
+              <div class="turnstile-container" data-turnstile></div>
+
               <button type="submit" class="btn primary full">Collaborate with HaloHub</button>
+              <p class="form-feedback" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
