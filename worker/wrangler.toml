@@ -7,5 +7,5 @@ ALLOWED_ORIGINS = "https://tymai-dev.github.io,https://halohub.com"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "halo_hub_submissions"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_name = "halo_hub"
+database_id = "37c3f2ed-ce26-488c-9df4-8a8e39a36fca"
